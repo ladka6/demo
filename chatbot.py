@@ -100,7 +100,7 @@ class ConversationalRAG:
     def get_chat_history(self, session_id: str) -> List[Dict[str, str]]:
         hist = []
         history = self.get_session_history(session_id)
-        print("History ", history.messages)
+
         if not history.messages:
             return []
         messages = history.messages
@@ -112,23 +112,3 @@ class ConversationalRAG:
             content_with_breaks = msg.content.replace("\n", "<br>")
             hist.append({"role": prefix, "content": content_with_breaks})
         return hist
-
-
-# # Example Usage
-# links = [
-#     "https://huggingface.co/learn/nlp-course/chapter3/1?fw=pt",
-#     "https://huggingface.co/learn/nlp-course/chapter3/2?fw=pt",
-#     "https://huggingface.co/learn/nlp-course/chapter3/3?fw=pt",
-#     "https://huggingface.co/learn/nlp-course/chapter3/4?fw=pt",
-#     "https://huggingface.co/learn/nlp-course/chapter3/5?fw=pt",
-#     "https://huggingface.co/learn/nlp-course/chapter3/6?fw=pt",
-# ]
-
-# conversational_rag = ConversationalRAG(links)
-# session_id = "example_session"
-# input_message = "Can you explain the concept of fine-tuning in NLP?"
-# response = conversational_rag.get_response(session_id, input_message)
-# print(response)
-
-# chat_history = conversational_rag.get_chat_history(session_id)
-# print(chat_history)

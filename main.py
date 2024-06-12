@@ -3,11 +3,10 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 from typing import Dict, List
-from chatbot import ChatBot
-from test import ConversationalRAG
+from chatbot import ConversationalRAG
 
 app = FastAPI()
-# chatbot = ChatBot()
+
 links = [
     "https://huggingface.co/learn/nlp-course/chapter3/1?fw=pt",
     "https://huggingface.co/learn/nlp-course/chapter3/2?fw=pt",
